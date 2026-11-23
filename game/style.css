@@ -1,0 +1,143 @@
+/* Ember Duel — table styling. All art is CSS + inline SVG sigils, no images. */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  background: #10160f;
+  color: #f5efdd;
+  font-family: Georgia, 'Times New Roman', serif;
+  overflow: hidden;
+}
+#app { width: 1280px; height: 800px; margin: 0 auto; position: relative; }
+.screen { position: absolute; inset: 0; display: flex; flex-direction: column; }
+.hidden { display: none !important; }
+
+/* ---- title screen ---- */
+#screen-title {
+  background: radial-gradient(ellipse at 50% 30%, #3a2a12 0%, #171207 55%, #0c0a06 100%);
+  align-items: center; justify-content: center; text-align: center;
+}
+.title-kicker { letter-spacing: 5px; font-size: 15px; color: #e8b64c; }
+.title-main {
+  font-size: 110px; line-height: 0.95; letter-spacing: 6px; margin: 10px 0 6px;
+  color: #ffcf5c; text-shadow: 0 0 34px rgba(255, 150, 40, .55), 0 4px 0 #7a3b06;
+}
+.title-sub { font-size: 21px; font-style: italic; color: #f5efdd; }
+.cycle { display: flex; gap: 14px; margin: 26px 0 10px; justify-content: center; }
+.cycle .cy { background: #241b0e; border: 2px solid #6b5322; border-radius: 10px; padding: 10px 16px; font-size: 16px; }
+.cycle .cy b { display: block; font-size: 19px; }
+.big-btn {
+  font-family: Georgia, serif; font-size: 26px; font-weight: bold; letter-spacing: 2px;
+  color: #241503; background: linear-gradient(#ffd76a, #e8a71e); border: 3px solid #7a5a12;
+  border-radius: 12px; padding: 14px 42px; cursor: pointer; margin-top: 14px;
+  box-shadow: 0 6px 0 #7a5a12, 0 10px 24px rgba(0,0,0,.6);
+}
+.big-btn:hover { filter: brightness(1.08); }
+.big-btn:active { transform: translateY(4px); box-shadow: 0 2px 0 #7a5a12; }
+.title-hint { margin-top: 16px; font-size: 15px; color: #cbb98d; }
+.howto {
+  margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+  max-width: 900px; font-size: 15px;
+}
+.howto-col {
+  background: rgba(255,255,255,.06); border: 1px solid #5c4a26; border-radius: 8px;
+  padding: 8px 14px; display: flex; align-items: center; gap: 8px;
+}
+.howto-col.wide { width: 100%; justify-content: center; }
+.sigil { font-size: 20px; line-height: 1; }
+.sig-ember { color: #ff5a3c; } .sig-leaf { color: #7ddc5f; }
+.sig-tide { color: #5fb4ff; } .sig-stone { color: #e8b64c; }
+
+/* ---- table ---- */
+#screen-table { background: radial-gradient(ellipse at 50% 40%, #1e4d2e 0%, #12301c 55%, #0a1f11 100%); }
+.topbar {
+  display: flex; align-items: center; gap: 24px; padding: 12px 28px 8px;
+  border-bottom: 2px solid rgba(255,255,255,.14);
+}
+.brand { font-size: 26px; font-weight: bold; letter-spacing: 3px; color: #ffcf5c; }
+.round { font-size: 20px; color: #ffe9a8; background: rgba(0,0,0,.3); padding: 4px 14px; border-radius: 20px; }
+.turn { font-size: 17px; font-style: italic; color: #d8e8c8; margin-left: auto; }
+.rival-zone, .player-zone { display: flex; align-items: center; gap: 20px; padding: 10px 28px; }
+.fighter { min-width: 260px; }
+.fighter-name { font-size: 17px; letter-spacing: 2px; color: #ffe9a8; margin-bottom: 5px; }
+.life { display: flex; gap: 2px; flex-wrap: wrap; max-width: 250px; }
+.life .pip { width: 11px; height: 11px; border-radius: 50%; background: #ff5a6e; box-shadow: 0 0 4px rgba(255,90,110,.7); }
+.life .pip.off { background: #3a2a2e; box-shadow: none; }
+.life-num { font-size: 22px; font-weight: bold; color: #ff8fa0; margin-top: 4px; }
+.telegraph {
+  flex: 1; text-align: center; font-size: 19px; font-style: italic;
+  background: rgba(0,0,0,.35); border: 2px dashed #e8b64c; border-radius: 10px; padding: 10px 12px;
+  color: #ffe9a8; min-height: 56px; display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.rival-hand { display: flex; gap: 6px; }
+.mini-card {
+  width: 34px; height: 48px; border-radius: 5px; border: 2px solid #8a6d2f;
+  background: repeating-linear-gradient(45deg, #5a3d16 0 6px, #7a5518 6px 12px);
+}
+.arena {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 26px;
+  padding: 6px 28px; position: relative;
+}
+.played { width: 150px; min-height: 210px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.played-label { font-size: 13px; letter-spacing: 3px; color: #cbb98d; }
+.versus { font-size: 34px; font-weight: bold; color: #ffcf5c; text-shadow: 0 0 18px rgba(255,180,60,.6); }
+.resolve {
+  position: absolute; bottom: 2px; left: 0; right: 0; text-align: center;
+  font-size: 20px; font-weight: bold; color: #ffe9a8; text-shadow: 0 2px 6px #000;
+}
+.embers { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 90px; }
+.embers .lbl { font-size: 13px; letter-spacing: 2px; color: #cbb98d; }
+.embers .dots { display: flex; gap: 5px; }
+.embers .dot { width: 16px; height: 16px; border-radius: 50%; background: #ff9a2e; box-shadow: 0 0 8px rgba(255,150,40,.9); }
+.embers .dot.off { background: #3a2f22; box-shadow: none; }
+.hand { display: flex; gap: 12px; flex: 1; justify-content: center; }
+.log {
+  width: 100%; text-align: center; font-size: 15px; font-style: italic; color: #d8e8c8;
+  padding: 6px 28px 12px; min-height: 30px;
+}
+
+/* ---- cards ---- */
+.card {
+  width: 128px; height: 178px; border-radius: 12px; background: #fdf6e3; color: #241503;
+  border: 3px solid #2b1d08; box-shadow: 0 6px 14px rgba(0,0,0,.55); cursor: pointer;
+  display: flex; flex-direction: column; overflow: hidden; position: relative;
+  transition: transform .12s ease, box-shadow .12s ease; user-select: none;
+}
+.card:hover { transform: translateY(-12px) scale(1.04); box-shadow: 0 14px 22px rgba(0,0,0,.65); }
+.card.unplayable { filter: grayscale(.7) brightness(.75); cursor: not-allowed; }
+.card.unplayable:hover { transform: none; }
+.card .chead { display: flex; justify-content: space-between; align-items: center; padding: 6px 8px 2px; font-weight: bold; }
+.card .cname { font-size: 15px; }
+.card .ccost {
+  background: #ff9a2e; color: #241503; border-radius: 50%; width: 26px; height: 26px;
+  display: flex; align-items: center; justify-content: center; font-size: 17px; border: 2px solid #7a4a06;
+}
+.card .cart {
+  flex: 1; display: flex; align-items: center; justify-content: center; font-size: 54px;
+  margin: 2px 8px; border-radius: 8px;
+}
+.card .cart.el-ember { background: linear-gradient(#ffb199, #ff5a3c); }
+.card .cart.el-tide { background: linear-gradient(#a8d4ff, #2f7fe0); }
+.card .cart.el-leaf { background: linear-gradient(#c4f0a8, #4c9a3f); }
+.card .cart.el-stone { background: linear-gradient(#ffe6a8, #c98f1b); }
+.card .cpower { text-align: center; font-size: 30px; font-weight: bold; line-height: 1; }
+.card .cpower small { font-size: 13px; display: block; letter-spacing: 2px; color: #6b5322; }
+.card .cel { text-align: center; font-size: 14px; font-weight: bold; letter-spacing: 1px; padding: 3px 0 6px; }
+.card .ccombo { font-size: 11px; font-style: italic; text-align: center; padding: 0 6px 6px; color: #5c4a26; }
+.card.played-card { cursor: default; }
+.card.played-card:hover { transform: none; }
+.card .key { position: absolute; top: 4px; left: 6px; font-size: 11px; color: #8a6d2f; }
+.chain-badge {
+  position: absolute; top: -16px; right: -12px; background: #ffcf5c; color: #7a3b06;
+  font-weight: bold; font-size: 14px; border-radius: 12px; padding: 3px 9px;
+  border: 2px solid #7a3b06; transform: rotate(6deg); z-index: 2;
+}
+
+/* ---- end screens ---- */
+#screen-win { background: radial-gradient(ellipse at 50% 35%, #3a2a08 0%, #171207 60%, #0c0a06 100%); }
+#screen-loss { background: radial-gradient(ellipse at 50% 35%, #2a1214 0%, #160a0c 60%, #0c0606 100%); }
+.end-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.end-kicker { letter-spacing: 5px; font-size: 16px; color: #e8b64c; }
+.end-main { font-size: 110px; letter-spacing: 8px; line-height: 1; margin: 12px 0; }
+.end-wrap.win .end-main { color: #ffcf5c; text-shadow: 0 0 40px rgba(255,180,60,.7), 0 4px 0 #7a3b06; }
+.end-wrap.loss .end-main { color: #ff8fa0; text-shadow: 0 0 40px rgba(255,60,90,.6), 0 4px 0 #5c0a14; }
+.end-stats { font-size: 20px; color: #f5efdd; margin-bottom: 10px; line-height: 1.6; }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ember Duel — a card battle of four elements</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div id="app">
+  <!-- TITLE SCREEN -->
+  <section id="screen-title" class="screen">
+    <div class="title-wrap">
+      <div class="title-kicker">A CARD BATTLE OF FOUR ELEMENTS</div>
+      <h1 class="title-main">EMBER<br>DUEL</h1>
+      <p class="title-sub">Outsmart the Rival. Chain your elements. Burn their life to zero.</p>
+      <div class="cycle" id="cycle-diagram"></div>
+      <button id="btn-play" class="big-btn">ENTER THE DUEL</button>
+      <p class="title-hint">Click a card to play it &nbsp;·&nbsp; keys 1–5 play a card &nbsp;·&nbsp; Enter starts</p>
+      <div class="howto">
+        <div class="howto-col wide">Same element twice in a row: <b>CHAIN +2</b> power. Embers grow +1 every round (max 5).</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLE SCREEN -->
+  <section id="screen-table" class="screen hidden">
+    <header class="topbar">
+      <div class="brand">EMBER DUEL</div>
+      <div class="round" id="round-label">ROUND 1</div>
+      <div class="turn" id="turn-label">Your move — play a card</div>
+    </header>
+
+    <div class="rival-zone">
+      <div class="fighter">
+        <div class="fighter-name">RIVAL · CINDER MAGE</div>
+        <div class="life" id="rival-life"></div>
+        <div class="life-num" id="rival-life-num">30 ❤</div>
+      </div>
+      <div class="telegraph" id="telegraph"></div>
+      <div class="rival-hand" id="rival-hand"></div>
+    </div>
+
+    <div class="arena">
+      <div class="played" id="played-you"><div class="played-label">YOU PLAYED</div></div>
+      <div class="versus">VS</div>
+      <div class="played" id="played-rival"><div class="played-label">RIVAL PLAYED</div></div>
+      <div class="resolve" id="resolve-line">The table is set. Strike first.</div>
+    </div>
+
+    <div class="player-zone">
+      <div class="fighter">
+        <div class="fighter-name">YOU · EMBERKEEPER</div>
+        <div class="life" id="you-life"></div>
+        <div class="life-num" id="you-life-num">30 ❤</div>
+      </div>
+      <div class="embers" id="embers"></div>
+      <div class="hand" id="hand"></div>
+    </div>
+    <div class="log" id="log"></div>
+  </section>
+
+  <!-- WIN SCREEN -->
+  <section id="screen-win" class="screen hidden">
+    <div class="end-wrap win">
+      <div class="end-kicker">THE RIVAL'S FLAME IS OUT</div>
+      <h1 class="end-main">VICTORY</h1>
+      <p class="end-stats" id="win-stats"></p>
+      <button class="big-btn" data-again>PLAY AGAIN</button>
+    </div>
+  </section>
+
+  <!-- LOSS SCREEN -->
+  <section id="screen-loss" class="screen hidden">
+    <div class="end-wrap loss">
+      <div class="end-kicker">YOUR EMBERS HAVE GONE COLD</div>
+      <h1 class="end-main">DEFEAT</h1>
+      <p class="end-stats" id="loss-stats"></p>
+      <button class="big-btn" data-again>TRY AGAIN</button>
+    </div>
+  </section>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
